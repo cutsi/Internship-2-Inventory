@@ -7,6 +7,7 @@ namespace DomacaZadaca_03
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            Console.WriteLine("test");
         }
     }
 }
