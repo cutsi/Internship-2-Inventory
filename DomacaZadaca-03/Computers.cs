@@ -16,7 +16,7 @@ namespace DomacaZadaca_03
             OS = os;
         }
 
-        public bool Portable;
-        public string OS;
+        public bool Portable { get; set; }
+        public string OS { get; set; }
     }
 }

@@ -16,7 +16,7 @@ namespace DomacaZadaca_03
             Name = name;
         }
 
-        public int TelephoneNumber;
-        public string Name;
+        public int TelephoneNumber { get; set; }
+        public string Name { get; set; }
     }
 }

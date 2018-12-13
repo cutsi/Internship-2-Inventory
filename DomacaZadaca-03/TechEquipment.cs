@@ -15,6 +15,6 @@ namespace DomacaZadaca_03
             Battery = battery;
         }
 
-        public bool Battery;
+        public bool Battery { get; set; }
     }
 }
