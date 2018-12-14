@@ -4,13 +4,13 @@ using System.Text;
 
 namespace DomacaZadaca_03
 {
-    class MobilePhones : TechEquipment
+    public class MobilePhones : TechEquipment
     {
         public MobilePhones() {}
 
-        public MobilePhones(int telephoneNumber, string name, bool battery, int serialNumber, string description, DateTime purchaseDate, int guarantee,
+        public MobilePhones(DateTime registrationExpirationDate, int telephoneNumber, string name, bool battery, int serialNumber, string description, DateTime purchaseDate, int guarantee,
             int price, string manufacturer)
-            : base(battery, serialNumber, description, purchaseDate, guarantee, price, manufacturer)
+            : base(registrationExpirationDate, battery, serialNumber, description, purchaseDate, guarantee, price, manufacturer)
         {
             TelephoneNumber = telephoneNumber;
             Name = name;

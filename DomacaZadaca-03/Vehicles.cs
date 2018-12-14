@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DomacaZadaca_03
 {
-    class Vehicles : Inventory
+    public class Vehicles : Inventory
     {
         public Vehicles() {}
 
@@ -18,6 +18,22 @@ namespace DomacaZadaca_03
 
         public DateTime RegistrationExpirationDate { get; set; }
         public int Milage { get; set; }
+
+        public static void PrintBySerialNumber(int SerialNum, List<Vehicles> MyInventory)
+        {
+            foreach (var VARIABLE in MyInventory)
+            {
+                if (VARIABLE.SerialNumber == SerialNum)
+                {
+                    Console.WriteLine(VARIABLE.Description);
+                    Console.WriteLine(VARIABLE.Guarantee);
+                    Console.WriteLine(VARIABLE.Manufacturer);
+                    Console.WriteLine(VARIABLE.Price);
+                }
+            }
+
+        }
     }
+
 }
 

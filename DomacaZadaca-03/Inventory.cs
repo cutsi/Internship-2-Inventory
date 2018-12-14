@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DomacaZadaca_03
 {
-    class Inventory
+    public class Inventory
     {
         public Inventory() {}
 
@@ -24,5 +24,7 @@ namespace DomacaZadaca_03
         public int Guarantee { get; set; }
         public int Price { get; set; }
         public string Manufacturer { get; set; }
+
+        
     }
 }
