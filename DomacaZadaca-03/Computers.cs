@@ -8,15 +8,37 @@ namespace DomacaZadaca_03
     {
         public Computers() {}
 
-        public Computers(DateTime registrationExpirationDate,bool portable, string os, bool battery, int serialNumber, string description, DateTime purchaseDate, int guarantee,
-            int price, string manufacturer)
-            : base(registrationExpirationDate, battery, serialNumber, description, purchaseDate, guarantee, price, manufacturer)
+        public Computers(DateTime registrationExpirationDate,bool portable, OS os, bool battery, string description, DateTime purchaseDate, int guarantee,
+            int price, Manufacturer manufacturer)
+            : base(registrationExpirationDate, battery, description, purchaseDate, guarantee, price, manufacturer)
         {
+            SerialNumber = SerialNumber = GenerateGuid();
             Portable = portable;
-            OS = os;
+            _OS = os;
         }
         
         public bool Portable { get; set; }
-        public string OS { get; set; }
+        public OS _OS { get; set; }
+        public enum OS
+        {
+            MacOs = 1,
+            Windows = 2,
+            Linux = 3
+        }
+        public override void PrintAll()
+        {
+            Console.WriteLine("Serial Number: " + SerialNumber);
+            Console.WriteLine("Description: " + Description);
+            Console.WriteLine("Purchase date: " + PurchaseDate);
+            Console.WriteLine("Guarantee: " + Guarantee);
+            Console.WriteLine("Price:" + Price);
+            Console.WriteLine("Manufacturer: " + _Manufacturer);
+            Console.WriteLine(" Registration Expiration Date: " + RegistrationExpirationDate);
+            Console.WriteLine("Battery? " + Battery);
+            //Console.WriteLine( "portable? ", + Portable);
+            Console.WriteLine("OS type: "+_OS);
+
+        }
+
     }
 }

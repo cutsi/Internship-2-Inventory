@@ -1,121 +1,70 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection.Metadata;
-
+using System.Runtime.InteropServices;
+using static DomacaZadaca_03.Functions;
 namespace DomacaZadaca_03
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //var MyVehicle = new Vehicles(new DateTime(2013, 1, 23), 1 ,2, "a car", new DateTime(2014, 1, 23), 12, 2400, "toyota");
-            var allVehicleList = InsertVehicles();
-            PrintBySerialNumber(2,allVehicleList);
-            PrintByVehicleExpirationDate(2020, allVehicleList);
-        }
-        public static void PrintBySerialNumber(int SerialNum, List<Vehicles> MyInventory)
-        {
-            foreach (var VARIABLE in MyInventory)
-            {
-                if (VARIABLE.SerialNumber == SerialNum)
-                {
-                    Console.WriteLine(VARIABLE.Description);
-                    Console.WriteLine(VARIABLE.Guarantee);
-                    Console.WriteLine(VARIABLE.Manufacturer);
-                    Console.WriteLine(VARIABLE.Price);
-                }
-            }
+            var VehicleList = new List<Vehicles>();
+            var Vehicle1 = new Vehicles(new DateTime(2019, 1, 1), 150000, "a car", new DateTime(2019, 1, 23), 12, 24000, Inventory.Manufacturer.Bmw);
+            var Vehicle2 = new Vehicles(new DateTime(2014, 3, 23), 400000, "a car", new DateTime(2018, 6, 23), 24, 28000, Inventory.Manufacturer.Mercedes);
+            var Vehicle3 = new Vehicles(new DateTime(2014, 3, 23), 50000, "a car", new DateTime(2020, 6, 23), 24, 21000, Inventory.Manufacturer.Fiat);
+            VehicleList.Add(Vehicle1);
+            VehicleList.Add(Vehicle2);
+            VehicleList.Add(Vehicle3);
 
-        }
 
-        public static void PrintByVehicleExpirationDate(int year, List<Vehicles> MyInventory)
-        {
-            foreach (var VARIABLE in MyInventory)
-            {
-                if (VARIABLE.RegistrationExpirationDate.Year == year)
-                {
-                    Console.WriteLine(VARIABLE.Description);
-                    Console.WriteLine(VARIABLE.Guarantee);
-                    Console.WriteLine(VARIABLE.Manufacturer);
-                    Console.WriteLine(VARIABLE.Price);
-                }
-            }
-        }
+            var InventoryList = new List<Inventory>();
+            var Inventory1 = new Inventory("Phone case", new DateTime(2018,12,12), 6,50,Inventory.Manufacturer.Apple );
+            var Inventory2 = new Inventory("Ear plugs", new DateTime(2014,4,8), 6, 40, Inventory.Manufacturer.Samsung);
+            var Inventory3 = new Inventory("Charger", new DateTime(2015,7,9), 6, 80, Inventory.Manufacturer.Xiaomi);
+            InventoryList.Add(Inventory1);
+            InventoryList.Add(Inventory2);
+            InventoryList.Add(Inventory3);
 
-        public static void PrintByBatter(List<TechEquipment> MyEquipment)
-        {
-            foreach (var VARIABLE in MyEquipment)
-            {
-                if (VARIABLE.Battery == true)
-                {
-                    Console.WriteLine(VARIABLE.Description);
-                    Console.WriteLine(VARIABLE.Guarantee);
-                    Console.WriteLine(VARIABLE.Manufacturer);
-                    Console.WriteLine(VARIABLE.Price);
-                }
-            }
-        }
+            var TechEquipmentList = new List<TechEquipment>();
+            var tech1 = new TechEquipment(new DateTime(2018,4,7), true, "tablet", new DateTime(2018,4,9), 12, 100, Inventory.Manufacturer.Apple  );
+            var tech2 = new TechEquipment(new DateTime(2018, 4, 7), false, "DVD player", new DateTime(2018, 6, 9), 12, 200, Inventory.Manufacturer.Lenovo);
+            var tech3 = new TechEquipment(new DateTime(2017, 4, 7), true, "AC", new DateTime(2018, 3, 9), 12, 800, Inventory.Manufacturer.Xiaomi);
+            TechEquipmentList.Add(tech1);
+            TechEquipmentList.Add(tech2);
+            TechEquipmentList.Add(tech3);
 
-        public static void PrintByPhoneBrand(string Brand, List<MobilePhones> myPhones)
-        {
-            foreach (var VARIABLE in myPhones)
-            {
-                if (VARIABLE.Manufacturer == Brand)
-                {
-                    Console.WriteLine(VARIABLE.Description);
-                    Console.WriteLine(VARIABLE.Guarantee);
-                    Console.WriteLine(VARIABLE.Manufacturer);
-                    Console.WriteLine(VARIABLE.Price);
-                }
-            }
-        }
+            var ComputerList = new List<Computers>();
+            var comp1 = new Computers(new DateTime(2019,4,6), false, Computers.OS.MacOs, false, "brand new computer", new DateTime(2016, 11, 8), 12, 1200, Inventory.Manufacturer.HP );
+            var comp2 = new Computers(new DateTime(2019, 1, 8), false, Computers.OS.Linux, false, "brand new samsung computer", new DateTime(2017, 12, 8), 12, 1400, Inventory.Manufacturer.Apple);
+            var comp3 = new Computers(new DateTime(2018, 4, 6), false, Computers.OS.Windows, false, "used computer in good conditions", new DateTime(2017, 8, 8), 12, 800, Inventory.Manufacturer.Lenovo);
+            ComputerList.Add(comp1);
+            ComputerList.Add(comp2);
+            ComputerList.Add(comp3);
 
-        public static void PrintByOs(string OS, List<Computers> myComps)
-        {
-            foreach (var VARIABLE in myComps)
-            {
-                if (VARIABLE.OS == OS)
-                {
-                    Console.WriteLine(VARIABLE.Description);
-                    Console.WriteLine(VARIABLE.Guarantee);
-                    Console.WriteLine(VARIABLE.Manufacturer);
-                    Console.WriteLine(VARIABLE.Price);
-                }
-            }
-        }
 
-        public static void PrintByPhoneExpirationDate(int year, List<MobilePhones> MyPhones)
-        {
-            foreach (var VARIABLE in MyPhones)
-            {
-                if (VARIABLE.RegistrationExpirationDate.Year == year)
-                {
-                    Console.WriteLine(VARIABLE.Description);
-                    Console.WriteLine(VARIABLE.Guarantee);
-                    Console.WriteLine(VARIABLE.Manufacturer);
-                    Console.WriteLine(VARIABLE.Price);
-                }
-            }
-        }
+            var PhoneList = new List<MobilePhones>();
+            var phone1 = new MobilePhones(new DateTime(2019,12,12), 0923329275, "Josip Cutura", true, "brand new phone", new DateTime(2017,12,8), 18, 800, Inventory.Manufacturer.Xiaomi);
+            var phone2 = new MobilePhones(new DateTime(2019, 8, 12), 0923329276, "Josip Maric", true, "brand new phone", new DateTime(2017, 4, 8), 18, 1600, Inventory.Manufacturer.Apple);
+            var phone3 = new MobilePhones(new DateTime(2019, 9, 12), 0923329277, "Ivica Ivic", true, "brand new phone", new DateTime(2016, 12, 8), 18, 400, Inventory.Manufacturer.Samsung);
+            PhoneList.Add(phone1);
+            PhoneList.Add(phone2);
+            PhoneList.Add(phone3);
 
-        public static List<Vehicles> InsertVehicles()
-        {
-            var allVehicleList = new List<Vehicles>()
-            {
-                new Vehicles()
-                {
-                    RegistrationExpirationDate = new DateTime(2020, 1, 23), Milage = 24000, SerialNumber = 20,
-                    Description = "In an excellent condition", Guarantee = 12, Price = 25000,
-                    PurchaseDate = new DateTime(2016, 1, 3), Manufacturer = "Toyota"
-                },
-                new Vehicles()
-                {
-                    RegistrationExpirationDate = new DateTime(2022, 1, 23), Milage = 24400, SerialNumber = 2,
-                    Description = "In an excellent condition", Guarantee = 24, Price = 250000,
-                    PurchaseDate = DateTime.Today, Manufacturer = "Mercedes"
-                }
-            };
-            return allVehicleList;
+            //TechSellingPrice(tech1);
+            //VehicleSellingPrice(Vehicle1);
+            //PrintByOs("linux",ComputerList);
+            //NextVehicleExpirationdateMonth(VehicleList);
+            //PrintByPhoneExpirationDate(2019,PhoneList);
+            //PrintByPhoneBrand("samsung",PhoneList);
+            //NumberOfTechEquipWithBattery(TechEquipmentList);
+            //PrintByPhoneCompExpirationDate(2018,ComputerList);
+            //PrintAllInventory(InventoryList);
+            //PrintBySerialNumberInventory(Inventory1.GetSerialNumber(), InventoryList);
+            //Vehicle3.GetSerialNumber();
+            //PrintAllVehicles(VehicleList);
+
+
         }
     }
 }

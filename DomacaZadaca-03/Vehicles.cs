@@ -8,31 +8,32 @@ namespace DomacaZadaca_03
     {
         public Vehicles() {}
 
-        public Vehicles(DateTime registrationExpirationDate, int milage, int serialNumber, string description, DateTime purchaseDate, 
-            int guarantee, int price, string manufacturer) 
-            : base( serialNumber, description, purchaseDate, guarantee, price, manufacturer)
+        public Vehicles(DateTime registrationExpirationDate, int milage, string description, DateTime purchaseDate, 
+            int guarantee, int price, Manufacturer manufacturer) 
+            : base(description, purchaseDate, guarantee, price, manufacturer)
         {
+            SerialNumber = GenerateGuid();
             RegistrationExpirationDate = registrationExpirationDate;
             Milage = milage;
         }
-
+        //public Guid SerialNumber { get; set; }
         public DateTime RegistrationExpirationDate { get; set; }
         public int Milage { get; set; }
 
-        public static void PrintBySerialNumber(int SerialNum, List<Vehicles> MyInventory)
+        public override void PrintAll()
         {
-            foreach (var VARIABLE in MyInventory)
-            {
-                if (VARIABLE.SerialNumber == SerialNum)
-                {
-                    Console.WriteLine(VARIABLE.Description);
-                    Console.WriteLine(VARIABLE.Guarantee);
-                    Console.WriteLine(VARIABLE.Manufacturer);
-                    Console.WriteLine(VARIABLE.Price);
-                }
-            }
+            Console.WriteLine("Serial Number: " + SerialNumber);
+            Console.WriteLine("Description: " + Description);
+            Console.WriteLine("Purchase date: " + PurchaseDate);
+            Console.WriteLine("Guarantee: " + Guarantee);
+            Console.WriteLine("Price:" + Price);
+            Console.WriteLine("Manufacturer: " + _Manufacturer);
+            Console.WriteLine("Mileage" + Milage);
+            Console.WriteLine(" Registration Expiration Date: " + RegistrationExpirationDate);
 
         }
+        
+
     }
 
 }
