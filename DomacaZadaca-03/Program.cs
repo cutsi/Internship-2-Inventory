@@ -51,6 +51,7 @@ namespace DomacaZadaca_03
             PhoneList.Add(phone2);
             PhoneList.Add(phone3);
 
+
             TechSellingPrice(tech1);
             VehicleSellingPrice(Vehicle1);
             PrintByOs("linux",ComputerList);
@@ -63,8 +64,12 @@ namespace DomacaZadaca_03
             PrintBySerialNumberInventory(Inventory1.GetSerialNumber(), InventoryList);
             Vehicle3.GetSerialNumber();
             PrintAllVehicles(VehicleList);
-
-
+            DeleteInventoryItem(Inventory1,InventoryList);
+            PrintAllInventory(InventoryList);
+            DeleteComputerItem(comp1,ComputerList);
+            DeletePhoneItem(phone1,PhoneList);
+            DeleteTechEquipmentItem(tech1,TechEquipmentList);
+            DeleteVehicleItem(Vehicle1,VehicleList);
         }
     }
 }

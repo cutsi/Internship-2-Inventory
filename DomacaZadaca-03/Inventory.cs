@@ -61,6 +61,16 @@ namespace DomacaZadaca_03
             Console.WriteLine("\n\n");
 
         }
+        public virtual void Delete(string SerialNumber, List<Inventory> MyInventory)
+        {
+            foreach (var VARIABLE in MyInventory)
+            {
+                if (VARIABLE.SerialNumber.ToString() == SerialNumber)
+                {
+                    MyInventory.Remove(VARIABLE);
+                }
+            }
+        }
     }
-
+    
 }

@@ -38,6 +38,15 @@ namespace DomacaZadaca_03
             Console.WriteLine("OS type: "+_OS);
             Console.WriteLine("\n\n");
         }
-
+        public virtual void Delete(string SerialNumber, List<Computers> MyComp)
+        {
+            foreach (var VARIABLE in MyComp)
+            {
+                if (VARIABLE.SerialNumber.ToString() == SerialNumber)
+                {
+                    MyComp.Remove(VARIABLE);
+                }
+            }
+        }
     }
 }

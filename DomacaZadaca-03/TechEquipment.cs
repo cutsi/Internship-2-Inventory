@@ -32,5 +32,15 @@ namespace DomacaZadaca_03
             Console.WriteLine("Battery? "+ Battery);
             Console.WriteLine("\n\n");
         }
+        public virtual void Delete(string SerialNumber, List<TechEquipment> MyTech)
+        {
+            foreach (var VARIABLE in MyTech)
+            {
+                if (VARIABLE.SerialNumber.ToString() == SerialNumber)
+                {
+                    MyTech.Remove(VARIABLE);
+                }
+            }
+        }
     }
 }

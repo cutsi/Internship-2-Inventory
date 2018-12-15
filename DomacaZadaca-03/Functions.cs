@@ -56,6 +56,8 @@ namespace DomacaZadaca_03
             if (cnt == 0)
             {
                 Console.WriteLine("No such brand in inventory");
+                Console.WriteLine("\n\n");
+
             }
         }
 
@@ -78,6 +80,8 @@ namespace DomacaZadaca_03
                 {
                     Console.WriteLine("Name: "+ VARIABLE.Name);
                     Console.WriteLine("Phone Number: " + VARIABLE.TelephoneNumber);
+                    Console.WriteLine("\n\n");
+
                 }
             }
         }
@@ -94,6 +98,7 @@ namespace DomacaZadaca_03
             }
 
             Console.WriteLine("Number of tech equipment with battery is " + cnt);
+            Console.WriteLine("\n\n");
             
         }
 
@@ -161,6 +166,28 @@ namespace DomacaZadaca_03
             Console.WriteLine("Price before: " + myTech.Price);
             Console.WriteLine("Price after: " + finalPrice);
             Console.WriteLine("You save: " + PriceDifference);
+            Console.WriteLine("\n\n");
+        }
+
+        public static void DeleteInventoryItem(Inventory Item, List<Inventory> MyInventory)
+        {
+            MyInventory.Remove(Item);
+        }
+        public static void DeleteVehicleItem(Vehicles Item, List<Vehicles> MyVehicles)
+        {
+            MyVehicles.Remove(Item);
+        }
+        public static void DeleteTechEquipmentItem(TechEquipment Item, List<TechEquipment> MyTech)
+        {
+            MyTech.Remove(Item);
+        }
+        public static void DeleteComputerItem(Computers Item, List<Computers> MyComp)
+        {
+            MyComp.Remove(Item);
+        }
+        public static void DeletePhoneItem(MobilePhones Item, List<MobilePhones> MyPhones)
+        {
+            MyPhones.Remove(Item);
         }
     }
 }

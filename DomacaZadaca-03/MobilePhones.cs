@@ -34,5 +34,16 @@ namespace DomacaZadaca_03
             Console.WriteLine("Users name: "+Name);
             Console.WriteLine("\n\n");
         }
+
+        public virtual void Delete(string SerialNumber, List<MobilePhones> MyPhone)
+        {
+            foreach (var VARIABLE in MyPhone)
+            {
+                if (VARIABLE.SerialNumber.ToString() == SerialNumber)
+                {
+                    MyPhone.Remove(VARIABLE);
+                }
+            }
+        }
     }
 }

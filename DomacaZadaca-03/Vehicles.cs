@@ -32,7 +32,16 @@ namespace DomacaZadaca_03
             Console.WriteLine(" Registration Expiration Date: " + RegistrationExpirationDate);
             Console.WriteLine("\n\n");
         }
-        
+        public virtual void Delete(string SerialNumber, List<Vehicles> MyVehicle)
+        {
+            foreach (var VARIABLE in MyVehicle)
+            {
+                if (VARIABLE.SerialNumber.ToString() == SerialNumber)
+                {
+                    MyVehicle.Remove(VARIABLE);
+                }
+            }
+        }
 
     }
 
