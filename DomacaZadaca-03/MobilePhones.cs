@@ -32,7 +32,7 @@ namespace DomacaZadaca_03
             Console.WriteLine("Battery? " + Battery);
             Console.WriteLine("Telephone number: "+TelephoneNumber);
             Console.WriteLine("Users name: "+Name);
-
+            Console.WriteLine("\n\n");
         }
     }
 }

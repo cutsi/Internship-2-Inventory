@@ -58,7 +58,7 @@ namespace DomacaZadaca_03
             Console.WriteLine("Price:" + Price);
             Console.WriteLine("Manufacturer: "+ _Manufacturer);
             Console.WriteLine( "Serial Number: "+ SerialNumber );
-
+            Console.WriteLine("\n\n");
 
         }
     }

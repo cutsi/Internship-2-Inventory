@@ -51,18 +51,18 @@ namespace DomacaZadaca_03
             PhoneList.Add(phone2);
             PhoneList.Add(phone3);
 
-            //TechSellingPrice(tech1);
-            //VehicleSellingPrice(Vehicle1);
-            //PrintByOs("linux",ComputerList);
-            //NextVehicleExpirationdateMonth(VehicleList);
-            //PrintByPhoneExpirationDate(2019,PhoneList);
-            //PrintByPhoneBrand("samsung",PhoneList);
-            //NumberOfTechEquipWithBattery(TechEquipmentList);
-            //PrintByPhoneCompExpirationDate(2018,ComputerList);
-            //PrintAllInventory(InventoryList);
-            //PrintBySerialNumberInventory(Inventory1.GetSerialNumber(), InventoryList);
-            //Vehicle3.GetSerialNumber();
-            //PrintAllVehicles(VehicleList);
+            TechSellingPrice(tech1);
+            VehicleSellingPrice(Vehicle1);
+            PrintByOs("linux",ComputerList);
+            NextVehicleExpirationdateMonth(VehicleList);
+            PrintByPhoneExpirationDate(2019,PhoneList);
+            PrintByPhoneBrand("samsung",PhoneList);
+            NumberOfTechEquipWithBattery(TechEquipmentList);
+            PrintByPhoneExpirationDate(2018,PhoneList);
+            PrintAllInventory(InventoryList);
+            PrintBySerialNumberInventory(Inventory1.GetSerialNumber(), InventoryList);
+            Vehicle3.GetSerialNumber();
+            PrintAllVehicles(VehicleList);
 
 
         }

@@ -35,9 +35,8 @@ namespace DomacaZadaca_03
             Console.WriteLine("Manufacturer: " + _Manufacturer);
             Console.WriteLine(" Registration Expiration Date: " + RegistrationExpirationDate);
             Console.WriteLine("Battery? " + Battery);
-            //Console.WriteLine( "portable? ", + Portable);
             Console.WriteLine("OS type: "+_OS);
-
+            Console.WriteLine("\n\n");
         }
 
     }

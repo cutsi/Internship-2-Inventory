@@ -30,7 +30,7 @@ namespace DomacaZadaca_03
             Console.WriteLine("Manufacturer: " + _Manufacturer);
             Console.WriteLine(" Registration Expiration Date: " + RegistrationExpirationDate);
             Console.WriteLine("Battery? "+ Battery);
-
+            Console.WriteLine("\n\n");
         }
     }
 }
